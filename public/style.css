@@ -1,0 +1,127 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte base e fundo */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e2f;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tela de login */
+#login-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  background: #2a2a40;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#login-screen input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+#login-screen button {
+  padding: 10px 20px;
+  background-color: #4c8bfd;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#login-screen button:hover {
+  background-color: #3a70d6;
+}
+
+/* Tela do chat */
+#chat-screen {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  width: 90vw;
+  max-width: 600px;
+  background: #2a2a40;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 5px;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  background: #383854;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.message.you {
+  background: #4c8bfd;
+  align-self: flex-end;
+}
+
+#message-form {
+  display: flex;
+  gap: 10px;
+}
+
+#message-form input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+#message-form button {
+  padding: 10px 20px;
+  background-color: #4c8bfd;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#message-form button:hover {
+  background-color: #3a70d6;
+}
+
+/* Scroll bonito */
+#messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background-color: #4c8bfd;
+  border-radius: 4px;
+}

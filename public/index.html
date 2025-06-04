@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Entrar no Chat</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="login-container">
+        <h2>Escolha seu Nickname</h2>
+        <input type="text" id="nickname" placeholder="Seu nome..." />
+        <button onclick="enterChat()">Entrar</button>
+        <p id="error" class="error"></p>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        function enterChat() {
+            const nickname = document.getElementById("nickname").value.trim();
+            const error = document.getElementById("error");
+            if (!nickname) return;
+
+            socket.emit("set-nickname", nickname, (res) => {
+                if (res.success) {
+                    localStorage.setItem("nickname", nickname);
+                    window.location.href = "chat.html";
+                } else {
+                    error.textContent = "Nickname já está em uso!";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
